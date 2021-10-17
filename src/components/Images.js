@@ -1,31 +1,18 @@
 import React from 'react';
-import Image from "./Image";
 import './style.css';
 
 function Images({images}) {
-
-    const img = {
-        maxHeight: "100%",
-        minWidth: "100%",
-        objectFit: "cover",
-        verticalAlign: "bottom",
-        borderRadius: "4px"
-    }
-
     return (
-        <div>
-            <ul className="photo-grid">
+        <div className="container">
                 {images.map(image => {
                     return (
-                        <li key={image.id}>
                             <img
+                                style={{marginBottom:"10px",boxSizing:"border-box",width:"100%"}}
                                 src={image.urls.regular}
                                 alt="unsplash images"
                             />
-                        </li>
                     );
                 })}
-            </ul>
         </div>
     )
 
